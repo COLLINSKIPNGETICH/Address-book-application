@@ -15,8 +15,8 @@ def view_contacts():
     else:
         print("No contacts found.")
 
-def add_contact(name, phone, email):
-    new_contact = Contact(name=name, phone=phone, email=email)
+def add_contact(name, phone, email, id):
+    new_contact = Contact(name=name, phone=phone, email=email,id=id)
     session.add(new_contact)
     session.commit()
     print("Contact added successfully.")
@@ -85,7 +85,8 @@ if __name__ == "__main__":
             name = input("Enter contact name: ")
             phone = input("Enter contact phone number: ")
             email = input("Enter contact email address: ")
-            add_contact(name, phone, email)
+            id = input("Enter contact id")
+            add_contact(name, phone, email, id)
         elif choice == "3":
             contact_id = input("Enter ID of contact to delete: ")
             delete_contact(int(contact_id))
@@ -102,7 +103,7 @@ if __name__ == "__main__":
         elif choice == "7":
             restore_contacts()
         elif choice == "8":
-            print("Exiting...")
+            print("GOODBYEE")
             break
         else:
             print("Invalid choice. Please enter a valid option.")
